@@ -22,11 +22,10 @@ def bfs(graph,
                 if on_known(source, n, acc):
                     return acc, known
                 continue
-            else:
-                if on_entry(source, n, acc):
-                    return acc, known
-                known.add(n)
-                frontier.append(n)
+            known.add(n)
+            frontier.append(n)
+            if on_entry(source, n, acc):
+                return acc, known
         if on_exit(source, acc):
             return acc, known
     return acc, known
