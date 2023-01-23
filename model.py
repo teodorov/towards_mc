@@ -45,3 +45,30 @@ class ParentTraceProxy(IdentityProxy):
             if self.parents.get(n) is None:
                 self.parents[n] = [configuration]
         return neighbours
+
+
+class SemanticTransitionRelation:
+    @abstractmethod
+    def initial(self): pass
+
+    @abstractmethod
+    def actions(self, configuration): pass
+
+    @abstractmethod
+    def execute(self, action, configuration): pass
+
+
+class STR2TR(TransitionRelation):
+
+    def __init__(self, operand):
+        self.operand = operand
+
+    def roots(self):
+        return self.operand.initial()
+
+    def next(self, configuration):
+        targets = []
+        for a in self.operand.actions(configuration):
+            target = self.operand.execute(a, configuration)
+            targets.append(target)
+        return targets
