@@ -1,4 +1,5 @@
 from model import TransitionRelation
+from towards_mc.model_checking import predicate_mc
 from traversal import predicate_finder
 
 
@@ -37,3 +38,12 @@ if __name__ == '__main__':
     x = 1
     [pred, found, count, target], known = predicate_finder(NBits([0], 3), lambda n: n == x)
     print(f'{x} reachable, found: ', found, ' [', target, '] explored ', count, 'nodes, known: ', binary_print(known))
+
+    x = 16
+    predicate_mc(NBits([0], 3), lambda n: n == x)
+
+    x = 5
+    predicate_mc(NBits([0], 3), lambda n: n == x)
+
+    x = 1
+    predicate_mc(NBits([0], 3), lambda n: n == x)
