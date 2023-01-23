@@ -27,13 +27,13 @@ def binary_print(s):
 if __name__ == '__main__':
 
     x = 16
-    [target, found, count], known = predicate_finder(NBits([0], 3), lambda n: n == x)
-    print(f'{x} reachable: ', found, ' explored ', count, 'nodes, known: ', binary_print(known))
+    [pred, found, count, target], known = predicate_finder(NBits([0], 3), lambda n: n == x)
+    print(f'{x} reachable, found: ', found, ' [', target, '] explored ', count, 'nodes, known: ', binary_print(known))
 
     x = 5
-    [target, found, count], known = predicate_finder(NBits([0], 3), lambda n: n == x)
-    print(f'{x} reachable: ', found, ' explored ', count, 'nodes, known: ', binary_print(known))
+    [pred, found, count, target], known = predicate_finder(NBits([0], 3), lambda n: n == x)
+    print(f'{x} reachable, found: : ', found, ' [', target, '] explored ', count, 'nodes, known: ', binary_print(known))
 
     x = 1
-    [target, found, count], known = predicate_finder(NBits([0], 3), lambda n: n == x)
-    print(f'{x} reachable: ', found, ' explored ', count, 'nodes, known: ', binary_print(known))
+    [pred, found, count, target], known = predicate_finder(NBits([0], 3), lambda n: n == x)
+    print(f'{x} reachable, found: ', found, ' [', target, '] explored ', count, 'nodes, known: ', binary_print(known))
