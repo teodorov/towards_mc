@@ -75,20 +75,20 @@ if __name__ == '__main__':
     print(found, ' explored ', count, 'nodes, known: ', known)
 
     print('-----------------PREDICATE FINDER--------')
-    [target, found, count], known = predicate_finder(graph1, lambda n: n == 3)
-    print(found, ' explored ', count, 'nodes, known: ', known)
+    [pred, found, count, target], known = predicate_finder(graph1, lambda n: n == 3)
+    print('pred(', target, ')=', found, ' explored ', count, 'nodes, known: ', known)
 
-    [target, found, count], known = predicate_finder(graph1, lambda n: n == 5)
-    print(found, ' explored ', count, 'nodes, known: ', known)
+    [pred, found, count, target], known = predicate_finder(graph1, lambda n: n == 5)
+    print('pred(', target, ')=', found, ' explored ', count, 'nodes, known: ', known)
 
-    [target, found, count], known = predicate_finder(graph1, lambda n: n == 1)
-    print(found, ' explored ', count, 'nodes, known: ', known)
+    [pred, found, count, target], known = predicate_finder(graph1, lambda n: n == 1)
+    print('pred(', target, ')=', found, ' explored ', count, 'nodes, known: ', known)
 
-    [target, found, count], known = predicate_finder(graph1, lambda n: n == 0)
-    print(found, ' explored ', count, 'nodes, known: ', known)
+    [pred, found, count, target], known = predicate_finder(graph1, lambda n: n == 0)
+    print('pred(', target, ')=', found, ' explored ', count, 'nodes, known: ', known)
 
-    [target, found, count], known = predicate_finder(graph1, lambda n: n == 6)
-    print(found, ' explored ', count, 'nodes, known: ', known)
+    [pred, found, count, target], known = predicate_finder(graph1, lambda n: n == 6)
+    print('pred(', target, ')=', found, ' explored ', count, 'nodes, known: ', known)
 
-    [target, found, count], known = predicate_finder(graph1, lambda n: n == 10)
-    print(found, ' explored ', count, 'nodes, known: ', known)
+    [pred, found, count, target], known = predicate_finder(graph1, lambda n: n == 10)
+    print('pred(', target, ')=', found, ' explored ', count, 'nodes, known: ', known)

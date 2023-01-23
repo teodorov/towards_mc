@@ -39,7 +39,10 @@ def predicate_finder(
         a[2] += 1
         # check predicate
         a[1] = predicate(n)
+        # set the node that checks the predicate in the last field of the accumulator
+        if a[1]:
+            a[3] = n
         # return true if predicate is true - stop the traversal
         return a[1]
 
-    return bfs(graph, [predicate, False, 0], on_entry=check_predicate)
+    return bfs(graph, [predicate, False, 0, None], on_entry=check_predicate)
