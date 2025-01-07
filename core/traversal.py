@@ -16,7 +16,7 @@ def bfs(graph,
             at_start = False
         else:
             source = frontier.popleft()
-            neighbours = graph.next(source)
+            neighbours = graph.neighbors(source)
         for n in neighbours:
             if n in known:
                 if on_known(source, n, acc):

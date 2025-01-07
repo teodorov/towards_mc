@@ -23,6 +23,7 @@ class HanoiConfiguration:
     def __eq__(self, other):
         if isinstance(other, HanoiConfiguration):
             return self.stacks_top == other.stacks_top and self.disk2stack == other.disk2stack
+        return False
 
     def __hash__(self):
         return 1
