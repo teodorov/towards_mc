@@ -1,3 +1,7 @@
+class RootedGraph:
+    def roots(self): pass
+    def neighbors(self): pass
+
 class ParentTracer:
     def __init__(self, operand):
         self.operand = operand
@@ -26,3 +30,21 @@ class ParentTracer:
             current = self.parent[current]
         trace.reverse()
         return trace
+
+class RootedPiecewiseRelation:
+    def initial(self): pass
+    def actions(self, c): pass
+    def execute(self, a, c): pass
+
+class RPR2RG:
+    def __init__(self, operand):
+        self.operand = operand
+    def initial(self):
+        return self.operand.initial()
+    def neighbors(self, c):
+        actions = self.operand.actions(c)
+        neighbors = []
+        for a in actions:
+            targets = self.operand.execute(a, c)
+            neighbors.extend(targets)
+        return neighbors

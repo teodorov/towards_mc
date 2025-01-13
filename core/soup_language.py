@@ -1,8 +1,8 @@
 import copy
 import inspect
 
-from towards_mc.model import SemanticTransitionRelation, STR2TR
-from towards_mc.model_checking import predicate_mc
+from core.model import SemanticTransitionRelation, STR2TR
+from core.model_checking import predicate_mc
 
 
 class Behavior:
